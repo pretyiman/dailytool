@@ -1,0 +1,46 @@
+{% extends 'blog/innerbase.html' %}
+
+{% block body_block %}
+<div class="container">
+  {% if messages %}
+    <ul class="messages">
+        {% for k in messages %}
+        <h3>{{k}}</h3>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+<h1>Search Result</h1>
+<br>
+<div class="container">
+  <table class = "table table-hover table-bordered"table table-striped table-bordered table-sm>
+    <thead calss= "thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Address</th>
+        <th>Edit/Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% if sr %}
+      {% for k in sr %}
+      <tr>
+      <td>{{k.contact_ID}}</td>
+      <td>{{k.Name}}</td>
+      <td>{{k.Mobile}}</td>
+      <td>{{k.Address}}</td>
+      <td>
+      <a href="/editcontact/{{k.contact_ID}}"><span calss = "glyphicon glyphicon-pencil">Edit</span> </a>
+      <a href="/deletecontact/{{k.contact_ID}}" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+      </td>
+      </tr>
+      {% endfor%}
+    {% endif %}
+    </tbody>
+</table>
+
+
+
+{% endblock %}

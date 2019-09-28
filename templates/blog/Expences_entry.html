@@ -1,0 +1,14 @@
+{% extends "blog/innerbase.html"%}
+{% block result_block %}
+
+<center><h1>Enter Expenses Detail:</h1></center>
+<div class="container">
+  <form method="POST">
+    {{ form.as_table}}
+    {% csrf_token %}
+    <div class="container">
+      <input type="Submit" class="btn btn-primary btn-block mt-2" value="Submit">
+    </div>
+  </form>
+</div>
+{% endblock %}

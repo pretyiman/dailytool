@@ -1,0 +1,93 @@
+{% extends "blog/base.html"%}
+{% block body_block %}
+<!--<center> <h1>Welcome {{ user.username }}!</h1><center>-->
+
+<!DOCTYPE html>
+<html>
+<title>Welcome</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<body>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+   <center><h1>Welcome {{ user.username }} !</h1><center>
+  <div class="w3-center">
+  <h4>It's very Simple & easy usable</h4>
+  <h2 class="w3-xxxlarge w3-animate-bottom">Handy tool for daily Use</h2>
+
+  </div>
+</header>
+
+
+<div class="w3-row-padding w3-center w3-margin-top">
+  <div class="w3-third">
+    <div class="w3-card w3-container" style="min-height:270px">
+    <h3>Inventory</h3><br>
+    <a href="/itemlist/"><i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
+    <!-- <p>Product</p>
+    <p>Catagory</p>
+    <p>SubCatagory</p>
+    <p>Warehouse</p>
+    <p>Rack</p> -->
+    </div>
+  </div>
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:270px">
+  <h3>Daily financial Record</h3><br>
+  <a href="/todaysincomereport"><i class="fa fa-dollar w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
+  <!-- <p>Income Log</p>
+  <p>Expenses Log</p>
+
+  <p>Short & custom Reporting</p> -->
+
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:270px">
+  <h3>Phone Book</h3><br>
+  <a href="/contactlist"><i class="fa fa-phone w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
+  <!-- <p>Save Contacts</p>
+  <p>Easy search</p>
+  <p>Editable & deleteable</p> -->
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:270px">
+  <h3>To-do List</h3><br>
+  <a href="/todo/"><i class="fa fa-tasks w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
+  <!-- <p>Mark Daily Task</p>
+  <p>Change Status </p>
+  <p>Editable & deleteable</p> -->
+  </div>
+</div>
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:270px">
+  <h3>POS</h3><br>
+  <a href="/home"><i class="fa fa-question w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
+  <p>Coming soon</p>
+  </div>
+</div>
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:270px">
+  <h3>Reminder</h3><br>
+  <a href="/home"><i class="fa fa-question w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
+  <p>Coming soon</p>
+  </div>
+</div>
+</div>
+
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+
+</body>
+</html>
+
+
+
+{% endblock %}

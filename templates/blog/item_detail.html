@@ -1,0 +1,31 @@
+{% extends "blog/inventory.html"%}
+{% block form_block %}
+<style media="screen">
+a {
+  color: blue;
+}
+</style>
+<center>
+<div class=class="form-horizontal">
+  <br>
+  <u><h3>Detail</h3></u>
+  <ul><h5>Item ID:  <font color="blue">{{item.Barcode}}</font></h5> </ul>
+  <ul><h5>Item Name: <font color="blue">{{item.Name}}</font></h5> </ul>
+  <ul><h5>Catagory: <font color="blue">{{item.Catagory}}</font></h5> </ul>
+  <ul><h5>SubCatagory: <font color="blue"> {{item.Sub_Catagory}}</font></h5> </ul>
+  <ul><h5>Sale Price: <font color="blue"> {{item.Sale_Price}}</font></h5> </ul>
+  <ul><h5>Stock: <font color="blue"> {{item.Stock}}</font></h5> </ul>
+  <ul><h5>Warehouse: <font color="blue"> {{item.Warehouse}}</font></h5> </ul>
+  <ul><h5>Rack: <font color="blue"> {{item.Rack}}</font></h5> </ul>
+  <div class="form-container">
+  <a href="{% url 'item-update' item.id %}" class="btn btn-warning" role="button" aria-pressed="true">Edit</a>
+  <a href="{% url 'item-delete' item.id %}" class="btn btn-danger" role="button" aria-pressed="true">Delete</a>
+  <!-- <form action="{% url 'item-delete' item.id %}" method="POST">
+       {% csrf_token %}
+       <button class="btn btn-outline-primary">Delete</button> -->
+
+   </div>
+   </center>
+</div>
+
+{% endblock %}

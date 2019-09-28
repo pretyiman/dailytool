@@ -1,0 +1,30 @@
+{% extends "blog/inventory.html"%}
+{% block form_block %}
+
+<div class="container">
+<div class="row">
+  <div class="col">
+    <h3>
+      {% if not form.instance.pk %}
+      Create Rack
+      {% else %}
+      Update Rack
+      {% endif %}
+    </h3>
+    <form method="POST" action="#">
+      {% csrf_token %}
+      <div class="form-group">
+        {{form.Rack}}
+      </div>
+      <div class="form-group">
+        <input type="Submit" class="btn btn-primary btn-block mt-2" value="Submit">
+      </div>
+    </form>
+    </div>
+  </div>
+  </div>
+{% endblock %}
+{% block list_block %}
+
+
+{% endblock %}

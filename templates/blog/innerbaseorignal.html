@@ -1,0 +1,63 @@
+{% extends 'blog/finance.html' %}
+{% block result_block %}
+
+
+<title>Reports</title>
+
+<br>
+<!-- <style>h2 {outline: 1px dotted red;}div.a {border: 1px solid blue;outline: 2px dashed blue;</style> -->
+<style>h2 {border: 1px solid red;outline: 2px dashed red;}div.a {background-color: skyblue;</style>
+  <div class="container">
+  <div class="row bg-lighgray">
+    <div class="col">
+          <h3>Quick link for Expenses Report</h3>
+    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+      <a href="/todayexpensesreport"<button type="button" class="btn btn-primary">Today</button></a>
+      <a href="/yesterdayexpensesreport"<button type="button" class="btn btn-primary">Yesterday</button></a>
+      <a href="/last7daysexpensesreport"<button type="button" class="btn btn-primary">Last 7 Days</button></a>
+      <a href="/last30daysexpensesreport"<button type="button" class="btn btn-primary">Last 30 Days</button></a>
+    </div>
+  </div>
+</div>
+<div class="col">
+      <h3>Quick link for Income Report</h3>
+<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+<div class="btn-group mr-2" role="group" aria-label="First group">
+  <a href="/todaysincomereport"<button type="button" class="btn btn-primary">Today</button></a>
+  <a href="/yesterdayincomereport"<button type="button" class="btn btn-primary">Yesterday</button></a>
+  <a href="/last7daysincomereport"<button type="button" class="btn btn-primary">Last 7 Days</button></a>
+  <a href="/last30daysincomereport"<button type="button" class="btn btn-primary">Last 30 Days</button></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row bg-lighgray">
+  <div class="col">
+    <h4><p>Select dates for custome Report:</p></h4>
+        <form id = "CDP" method="POST" action="{{formurl}}">
+          {% csrf_token %}
+          <label><h5> Start Date:</h5></label>
+          <input required type="date" name="htmldate" class="form-control ">
+          <label><h5> End Date:</h5></label>
+          <input required type="date" name="htmldate1" class="form-control ">
+          <button type="submit" name = "submit" class="btn btn-primary btn-block mt-2 ">Submit</button>
+        </form>
+      </div>
+      <div class="col">
+        <div class="a"><br>
+          <h1><u>Short Summary</u></h1>
+        <h3>Total Income:  {{total.income_value__sum}}</h3>
+        <h3>Total Expenses: {{totalexp.expenses_value__sum}}</h3>
+        <div class="a" background-color:Red;><br>
+          <h1>Net Cash: <u>{{netcash}}</u></h1>
+
+        </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

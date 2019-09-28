@@ -1,0 +1,78 @@
+{% extends 'blog/base.html' %}
+{% block body_block %}
+
+
+<style>
+.dropbtn {
+  background-color: #0069D9;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  display: block;
+  width: 180px;
+}
+
+.dropdown {
+  position: right;
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  /* position: right; */
+  position: absolute;
+  background-color: #085CA5;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #FFFFFF;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #0066EE3;}
+
+
+</style>
+<div class="row">
+  <br>
+<div class="col-md-auto padding-0">
+  <br>
+<div class="dropdown">
+  <button class="dropbtn">Daily Expenses</button>
+  <div class="dropdown-content">
+    <a href="/addexpenses">Add Expenses</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Daily Income</button>
+  <div class="dropdown-content">
+    <a href="/addincome">Add Income</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Reports</button>
+  <div class="dropdown-content">
+    <a href="/expnesesreport">Expenses Report</a>
+    <a href="/incomerepoting">Income Report</a>
+  </div>
+</div>
+</div>
+<div class="col-8 padding-0">
+
+  {% block result_block %}
+  
+  {% endblock %}
+  </div>
+</div>
+
+{% endblock %}

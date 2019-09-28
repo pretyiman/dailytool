@@ -1,0 +1,104 @@
+{% extends 'blog/base.html' %}
+{% block body_block %}
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<style>
+.dropbtn {
+  background-color: #0069D9;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  display: block;
+  width: 180px;
+}
+
+.dropdown {
+  position: right;
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  /* position: right; */
+  position: absolute;
+  background-color: #085CA5;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #FFFFFF;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #0066EE3;}
+
+
+</style>
+<div class="row">
+  <br>
+<div class="col-md-auto padding-0">
+  <br>
+<div class="dropdown">
+  <button class="dropbtn">Products</button>
+  <div class="dropdown-content">
+    <a href="/itemform">Creat Product</a>
+    <a href="/itemlist">List</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Catagory</button>
+  <div class="dropdown-content">
+    <a href="/catagoryform">Create Catagory</a>
+    <a href="/catagorylist">All Catagory</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">SubCatagory</button>
+  <div class="dropdown-content">
+    <a href="/subcatagoryform">Create SubCatagory</a>
+    <a href="/subcatagorylist">All SubCatagory</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Warehouse</button>
+  <div class="dropdown-content">
+    <a href="/warehouseform">Create Warehouse</a>
+    <a href="/warehouselist">All warehouse</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Rack</button>
+  <div class="dropdown-content">
+    <a href="/rackform">Create Rack</a>
+    <a href="/racklist">All Rack</a>
+  </div>
+</div>
+
+</div>
+  <div class="col-8 padding-0">
+    {% block list_block %}
+    {% endblock %}
+    {% block form_block %}
+    {% endblock %}
+    </div>
+
+
+
+    </div>
+
+
+
+{% endblock %}

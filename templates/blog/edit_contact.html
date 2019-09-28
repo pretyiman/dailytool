@@ -1,0 +1,55 @@
+
+{% extends "blog/base.html"%}
+{% block body_block %}
+<div class="row align-items-center justify-content-center">
+
+<div class="col">
+
+
+
+
+      <form class="post-form" action="/contactupdate/{{mycontact.contact_ID}}" method="post">
+        {% csrf_token %}
+    <div class="container">
+  <!-- <br> -->
+      <div class = "form-group row" >
+      <label class="col-sm-1 col-form-label"> </label>
+      <div class="col-sm-4">
+        <h3>Update Detail</h3>
+      </div>
+      </div>
+
+      <div class = "form-group row" >
+      <label class="col-sm-1 col-form-label">Name</label>
+      <div class="col-sm-4">
+      <input type="text" name="Name"  income_enrty = "Name" value="{{mycontact.Name}}"/>
+      </div>
+      </div>
+      <div class = "form-group row" >
+      <label class="col-sm-1 col-form-label">Mobile</label>
+      <div class="col-sm-4">
+      <input type="text" name="Mobile"  Mobile = "Mobile" value="{{mycontact.Mobile}}"/>
+    </div>
+    </div>
+
+  <div class = "form-group row" >
+  <label class="col-sm-1 col-form-label">Address</label>
+  <div class="col-sm-4">
+  <input type="text" name="Address"  Addess = "Address" value="{{mycontact.Address}}"/>
+  </div>
+  </div>
+  <div class = "form-group row" >
+  <label class="col-sm-1 col-form-label"></label>
+  <div class="col-sm-4">
+  <button type="submit" class ="btn btn-success">Update</button>
+  </div>
+  </div>
+  </form>
+      </div>
+
+    </div>
+
+
+
+
+{% endblock %}
