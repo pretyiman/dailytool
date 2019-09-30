@@ -1,2 +1,2 @@
-web: gunicorn gettingstarted.wsgi --log-file -
+web: gunicorn blogproject.wsgi --log-file -
 server : python manage.py runnserver

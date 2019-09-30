@@ -1,3 +1,5 @@
 django
 gunicorn
 django-heroku
+django-autocomplete-light
+argon2_cffi

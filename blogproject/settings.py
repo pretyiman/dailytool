@@ -30,13 +30,15 @@ SECRET_KEY = 'wmr)b-=!j9^7*x1m*^w&un_0_^j^ni99157-$r9@a=z=-ipx+7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dailytool.herokuapp.com','127.0.0.1:8000','127.0.0.1']
 
 # DEBUG = False
 #
 # ALLOWED_HOSTS = ["*"]
 
 # Application definition
+#javascript_settings
+#'dal',
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -45,8 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'javascript_settings',
-    'dal',
+    
+    
     'dal_select2',
     'blog',
 ]
@@ -59,6 +61,7 @@ HAYSTACK_CONNECTIONS = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -108,7 +111,7 @@ PASSWORD_HASHERS =[
     'django.contrib.auth.hashers.BCryptPasswordHasher',
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
