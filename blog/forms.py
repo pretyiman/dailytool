@@ -13,8 +13,8 @@ class ItemForm(forms.ModelForm):
     Name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}),required=True, max_length=100)
     Catagory = forms.ModelChoiceField(widget=autocomplete.ModelSelect2(attrs={'class':'form-control'}),queryset=catagory.objects.all())
     Sub_Catagory= forms.ModelChoiceField(widget=autocomplete.ModelSelect2(attrs={'class':'form-control'}),queryset=subcatagory.objects.all())
-    Sale_Price = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}),required=True, max_length=100)
-    Stock = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}),required=True, max_length=100)
+    Sale_Price = forms.IntegerField(widget=forms.NumberInput(attrs={'class':'form-control','placeholder':'Numbers only'}),required=True)
+    Stock = forms.IntegerField(widget=forms.NumberInput(attrs={'class':'form-control','placeholder':'Numbers only'}),required=True,)
     Warehouse = forms.ModelChoiceField(widget=autocomplete.ModelSelect2(attrs={'class':'form-control'}),queryset=warehouse.objects.all())
     Rack = forms.ModelChoiceField(widget=autocomplete.ModelSelect2(attrs={'class':'form-control'}),queryset=rack.objects.all())
 

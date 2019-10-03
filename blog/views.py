@@ -367,7 +367,7 @@ def incomeforminput (request):
                 pass
     else:
         form = Incomeform()
-        return render (request, "blog/income_entry.html", {'form':form})
+        return render (request, "blog/Income_form.html", {'form':form})
 
 @login_required(login_url='/login/')
 def DailyincomeReport(request):

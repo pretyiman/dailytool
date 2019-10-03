@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% block body_block %}
+<style media="screen">
+mark {
+background-color: red;
+color: black;
+}
+</style>
+<center>
+<form  method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <h5>Are you sure you want to delete <font color="red"> {{item.Name}} </Font> profile?</h5>
+  <button class="btn btn-primary" type="delete" name="button">Delete</button>
+</form>
+</center>
+
+
+
+</div>
+{% endblock %}

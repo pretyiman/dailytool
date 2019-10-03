@@ -23,29 +23,16 @@
 }
 </style>
 
-{% if messages %}
-{% for message in messages %}
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    <span style='color:red;text-decoration:line-through'>
-  <!-- <span style='color:black'>black with red strikethrough</span> -->
-</span>
-  </button>
-  {{message}}
-</div>
-{% endfor %}
-{% endif %}
 <br>
 <div class="row align-items-center justify-content-center">
   <form class="form-inline" method="post">
     {% csrf_token %}
   <div class="form-group mb-10">
-    <input id="text" name="item" placeholder="Add To-do" type="text" required="required" class="form-control">
+    <input id="text" name="item" placeholder="Add task here" type="text" required="required" class="form-control">
     {{form.item}}
 
   </div>
-  <button type="submit" class="btn btn-primary mb-10">Add To-do</button>
+  <button type="submit" class="btn btn-primary mb-10">Add Task</button>
 </form>
 </div>
 <br>
